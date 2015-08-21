@@ -1,61 +1,94 @@
 # Learn-to-code-week2
+Last week we signed up for GitHub and edited the HTML of a website we had forked.
+This week we'll be working on that same site, but this time we'll be editing the
+CSS to style the site as we see fit!
 
 
-+++++++++++++++++++++++++++++++TODO BEFORE CLASS++++++++++++++++++++++++++++++++
-## If there are any questions at any step please reach out on Slack!
+##This week we're going to change the CSS on the website we created last week!
+Navigate to the repository of the website that you created last week and click
+on the index.html file. Lets take a minute to look through the contents of the
+###Change the currently referenced stylesheet
+```head``` tags.
 
-## Download Atom?
-  https://atom.io/
-
-## Download Homebrew (if you have a mac)
-http://brew.sh/
-
-## Download Git?
-  Mac:
-  ```brew install git```
-
-  Windows:
-  https://git-scm.com/book/en/v2/Getting-Started-Installing-Git#Installing-on-Windows
-
-Setting up git to work with your github account
-https://help.github.com/articles/set-up-git/#setting-up-git
-
-Setting up your SSH Keys:
-https://help.github.com/articles/generating-ssh-keys/
+```
+<head>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>Hello World</title>
+</head>
+```
 
 
+The ```<meta>``` tag is there to let the browser know that this page is using
+the utf-8 character set.
+
+The first ```<link>``` tag is bringing in the "Montserrat" font from the free
+GoogleFonts library.
+
+The second ```<link>``` tag is referencing the CSS stylesheet that the page is
+using.
+
+The third ```<link>``` tag sets the favicon for the site.
 
 
+###Change the currently referenced stylesheet
+In the second ```link``` tag  you should recognize that ```href="css/style2.css"```
+is just a link to our "style2.css" file. Lets change that to our plain old
+"style.css" file stored in that same folder.
 
-##Clone the repo from last week
+Click the edit button while looking at your ```index.html``` page and change the
+stylesheet reference from "style2.css" to "style.css". Scroll to the bottom of the
+page, leave a commit message and commit your changes.
 
-Last week we did a bunch of work on github, but this week we're going to do the
-work locally on our own machines and then push the changes up to GitHub.
+###Change the Font to something from Google Fonts
+Navigate to google fonts: https://www.google.com/fonts
 
-1. First we need to go back to last week's repo and "clone" it.
-  https://github.com/GalvanizeOpenSource/Learn-To-Code-Week-1
-About half way down the page on the right hand underneath the settings tab you
-should see text that says "SSH clone URL". Copy that URL and then head to your
-terminal window.
+1. Find a font you like and click "add to collection".
 
-2. Clone this repo locally
-From the command line type ``` git clone PASTE-SSH-URL-HERE ```
+2. On the bottom right side of your screen click "use".
 
-3. Navigate to your newly cloned local repository
-Once the cloning is complete you'll want to look for that project in your
-current directory. You can do this by typing ```ls``` This should show you a
-project called "Learn-To-Code-Week-1".
+3. On the use page, scroll down and copy the link tag provided.
 
-4. CD into that directory and open the project in Atom
-Type ``` cd Learn-To-Code-Week-1 ``` into your terminal window. Once your in the
-project type ```Atom . ``` This should open up this project in your Atom text
-editor.
+4. Replace the first link tag in your ```index.html``` file with the new link tag
+you copied from google fonts.
 
-## Talk about File structure
+5. Commit your changes.
 
 
--Change the currently referenced stylesheet
--Change the Font to something from Google Fonts
--Add some CSS classes to the code
--Git from the command line
--Git push
+###Change the font-size of your social links
+First lets change the font size for all the links on the bottom of your page. In
+the footer tag of your ```index.html``` file notice that the ```<ul>``` tag has
+the classes "meta" and "inline-list", lets look for those classes in the
+style.css file.
+
+
+You'll first notice that the meta class is represented as ".meta" in the CSS
+file. (I've cleaned up the CSS to make it more readable.) The "." identifies
+that "meta" is a CSS class, inside the curly brackets are all the attributes
+associated with that class. Change the font-size to 40px
+
+```
+.meta {
+    text-transform: uppercase;
+    font-family: Courier New, Quicksand, "Helvetica Neue", "Arial", sans-serif;
+    font-size: 18px;
+    letter-spacing: .15em;
+}
+```
+
+###Add some CSS of your own.
+Now that you have changed the CSS someone else has written, create some all new
+CSS from scratch!
+
+A good place to start will be changing the font color for all the links at the
+bottom of the page. If you want to change the color of all the links to the same
+thing you would use a class, but since we want each link to be a different color
+we'll be using id's.
+
+1. To each ```<li>``` tag ad an id tag like ```<li id="link1">```
+2. In your "style.css" file add each of your new id tags:
+``` #link1 {}```
+3. Change the color of each id:
+``` #link1 {color: red;} ```
