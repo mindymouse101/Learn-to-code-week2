@@ -92,3 +92,25 @@ we'll be using id's.
 ``` #link1 {}```
 3. Change the color of each id:
 ``` #link1 {color: red;} ```
+
+
+##Homework
+
+### Download Atom?
+  https://atom.io/
+
+### Download Homebrew (if you have a mac)
+http://brew.sh/
+
+### Download Git?
+  Mac:
+  ```brew install git```
+
+  Windows:
+  https://git-scm.com/book/en/v2/Getting-Started-Installing-Git#Installing-on-Windows
+
+Setting up git to work with your github account
+https://help.github.com/articles/set-up-git/#setting-up-git
+
+Setting up your SSH Keys:
+https://help.github.com/articles/generating-ssh-keys/
