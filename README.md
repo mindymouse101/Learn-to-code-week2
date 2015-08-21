@@ -96,13 +96,13 @@ we'll be using id's.
 
 ##Homework
 
-### Download Atom?
+### Download Atom
   https://atom.io/
 
 ### Download Homebrew (if you have a mac)
 http://brew.sh/
 
-### Download Git?
+### Download Git
   Mac:
   ```brew install git```
 
