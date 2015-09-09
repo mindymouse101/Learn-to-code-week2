@@ -1,46 +1,83 @@
 # Learn-to-code-week2
-Last week we signed up for GitHub and edited the HTML of a website we had forked.
-This week we'll be working on that same site, but this time we'll be editing the
-CSS to style the site as we see fit!
+Last week we signed up for GitHub and the atom text editor!
+This week we'll be working with the same code we cloned last week and editing the HTML & CSS.
+
+By the end of today you will have:
+
+1. Forked Cloned another project on github
+2. Edited some HTML and CSS
+3. Commited and pushed your changes to github!
 
 
-##This week we're going to change the CSS on the website we created last week!
-Navigate to the repository of the website that you created last week and click
-on the index.html file. Lets take a minute to look through the contents of the
-###Change the currently referenced stylesheet
-```head``` tags.
+##Lets fork and clone this repo!
+Make sure you're signed in! You're going to want to go to the top of this repository and click the "fork" button. This will create a copy of this repository in your github account!
+
+Next you're going to clone your forked copy of this repository to your local machine!
+
+####Mac
+On Github:
+- Copy the "SSH clone URL"
+In your terminal window:
+- Cd into the directory where you cloned your Learn-to-code-week1 repository last week.
+- In that directory (but not inside the Learn-to-code-week1 directory) type ```git clone PASTE SSH URL HER```
+
+####Windows
+In your github app you installed last week:
+- Click "Clone"
+- Select Learn-to-code-week2
+
+
+###Lets take a look at some HTML!
+Here is the basic structure of an HTML file:
 
 ```
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Montserrat' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/style2.css">
-    <link rel="icon" href="favicon.png" type="image/x-icon">
-    <title>Hello World</title>
+<title>Lets Build a one page site!</title>
+<link href="CSS/style.css" rel="stylesheet" type="text/css">
 </head>
+<body>
+  <div>
+    <p></p>
+  </div>
+</body>
+
+
+</html>
+
 ```
 
+The ```<link>``` tag is referencing the CSS stylesheet that the page is using.
 
-The ```<meta>``` tag is there to let the browser know that this page is using
-the utf-8 character set.
+The ```<div>``` tag is a generic container used to apply styles and format to multiple elements!
 
-The first ```<link>``` tag is bringing in the "Montserrat" font from the free
-GoogleFonts library.
-
-The second ```<link>``` tag is referencing the CSS stylesheet that the page is
-using.
-
-The third ```<link>``` tag sets the favicon for the site.
+The  ```<body>``` tag will contain the meat of the page make sure to keep all of the main parts of your code within these body tags!
 
 
-###Change the currently referenced stylesheet
-In the second ```link``` tag  you should recognize that ```href="css/style2.css"```
-is just a link to our "style2.css" file. Lets change that to our plain old
-"style.css" file stored in that same folder.
+###How do we check our changes?
+If we're making changes to the code on our local machine, how can we check to see if our changes had any affect on our code?
 
-Click the edit button while looking at your ```index.html``` page and change the
-stylesheet reference from "style2.css" to "style.css". Scroll to the bottom of the
-page, leave a commit message and commit your changes.
+We'll need to open our HTML file in a browser so we can see what it's going to look like!
+
+####Mac users
+- Right click on the index.html file and click "show in finder"
+- In the finder, right click again and click "open with chrome" (or whatever browser you have)
+Tada!!
+
+####Windows users
+- Find the index.html file in your directory
+- Right click again and click "open with chrome" (or whatever browser you have)
+Tada!!
+
+
+
+###Fix the link to currently referenced stylesheet
+Our website looks lame and boring and Graham is dumb. How do we make it look better?
+
+Can you tell why our inde.html file isn't getting any of the styles in the stylesheet?
+
+
 
 ###Change the Font to something from Google Fonts
 Navigate to google fonts: https://www.google.com/fonts
@@ -49,68 +86,48 @@ Navigate to google fonts: https://www.google.com/fonts
 
 2. On the bottom right side of your screen click "use".
 
-3. On the use page, scroll down and copy the link tag provided.
+3. On the use page, scroll down to number three and copy the link tag provided.
 
-4. Replace the first link tag in your ```index.html``` file with the new link tag
-you copied from google fonts.
+4. Paste that link tag in your ```index.html``` file with the new link tag
+you copied from google fonts. (BONUS: Where should you paste this?)
 
-5. Commit your changes.
+5. Copy the code under number four.
 
-
-###Change the font-size of your social links
-First lets change the font size for all the links on the bottom of your page. In
-the footer tag of your ```index.html``` file notice that the ```<ul>``` tag has
-the classes "meta" and "inline-list", lets look for those classes in the
-style.css file.
+6. Paste that code into your stylesheet! (BONUS: Where should you paste this?)
 
 
-You'll first notice that the meta class is represented as ".meta" in the CSS
-file. (I've cleaned up the CSS to make it more readable.) The "." identifies
-that "meta" is a CSS class, inside the curly brackets are all the attributes
-associated with that class. Change the font-size to 40px
+###Change the font-size of your h1 tags
+First lets change the font size for all the h1 tags on the bottom of your page.
+
+- Look for the h1 tags in the index.html file
+- In your Stylesheet look for the place where styles are applied to the h1 tags, it should look like this:
 
 ```
-.meta {
-    text-transform: uppercase;
-    font-family: Courier New, Quicksand, "Helvetica Neue", "Arial", sans-serif;
-    font-size: 18px;
-    letter-spacing: .15em;
+h1 {
+	font-size: 36px;
+	letter-spacing: -1px;
+	line-height: 100%;
 }
 ```
 
-###Add some CSS of your own.
-Now that you have changed the CSS someone else has written, create some all new
-CSS from scratch!
+Change the font-size to whatever you want.
 
-A good place to start will be changing the font color for all the links at the
-bottom of the page. If you want to change the color of all the links to the same
-thing you would use a class, but since we want each link to be a different color
-we'll be using id's.
+###Save, Commit and push your changes
+Now that we have changed our awesome website it's time to update our github account. It may seem like we haven't changed much but the rule with git is "Commit early commit often"
 
-1. To each ```<li>``` tag ad an id tag like ```<li id="link1">```
-2. In your "style.css" file add each of your new id tags:
-``` #link1 {}```
-3. Change the color of each id:
-``` #link1 {color: red;} ```
+Lets get started!
 
+####Mac
+In the terminal
+- Type ```git status``` (This should show all the files you've changed)
+- Type ```git add index.html```
+- Type ```git add style.css```
+- Type ```git status```(You should see the two files you added in green)
+- Type ```git commit -m"some commit message"```
+- Type ```git push origin master ```
 
-##Homework
+Go to the repo you cloned at the beginning of this class and you should see you changes!
 
-### Download Atom
-  https://atom.io/
+####Windows
 
-### Download Homebrew (if you have a mac)
-http://brew.sh/
-
-### Download Git
-  Mac:
-  ```brew install git```
-
-  Windows:
-  https://git-scm.com/book/en/v2/Getting-Started-Installing-Git#Installing-on-Windows
-
-Setting up git to work with your github account
-https://help.github.com/articles/set-up-git/#setting-up-git
-
-Setting up your SSH Keys:
-https://help.github.com/articles/generating-ssh-keys/
+?
